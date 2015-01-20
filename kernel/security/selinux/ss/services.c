@@ -1236,10 +1236,13 @@ static int security_context_to_sid_core(const char *scontext, u32 scontext_len,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/* An empty security context is never valid. */
 	if (!scontext_len)
 		return -EINVAL;
 
+=======
+>>>>>>> 7e33e34... upstream merge to Linux 3.4.82
 =======
 >>>>>>> 7e33e34... upstream merge to Linux 3.4.82
 =======
