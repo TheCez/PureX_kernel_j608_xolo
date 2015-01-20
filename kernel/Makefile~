@@ -192,14 +192,10 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/i386/ -e s/sun4u/sparc64/ \
 # Default value for CROSS_COMPILE is not to prefix executables
 # Note: Some architectures assign CROSS_COMPILE in their arch/*/Makefile
 export KBUILD_BUILDHOST := $(SUBARCH)
-#ARCH		?= arm
+#ARCH		?= $(SUBARCH)
 #CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
 ARCH		?= arm
-<<<<<<< HEAD
-CROSS_COMPILE	?= arm-linux-androideabi-
-=======
 CROSS_COMPILE	?= /media/kool/rainbow1/test-tinno82_s5501/toolchain/arm-cortex_a7-linux-gnueabi/bin/arm-cortex_a7-linux-gnueabi-
->>>>>>> acc317e... upstream merge to Linux 3.4.94 Fix
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -353,8 +349,9 @@ CHECK		= sparse
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
-OPTFLAGS = -mcpu=cortex-a7 -mfpu=neon -ftree-vectorize
-
+OPTFLAGS = -mcpu=cortex-a7 -mfpu=neon \
+		   -ffast-math -fsingle-precision-constant \
+		   -fgcse-lm -fgcse-sm -fsched-spec-load -fforce-addr
 CFLAGS_MODULE   = -fno-pic -fgcse-las $(OPTFLAGS)
 AFLAGS_MODULE   = $(OPTFLAGS)
 LDFLAGS_MODULE  =
@@ -377,7 +374,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
-		   -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=soft
+		   -mcpu=cortex-a7 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
@@ -785,11 +782,7 @@ libs-y		:= $(libs-y1) $(libs-y2)
 # System.map is generated to document addresses of all kernel symbols
 
 vmlinux-init := $(head-y) $(init-y)
-ifeq ($(RGK_TOUCHPANEL_GESTURE), yes)
-vmlinux-main := $(core-y) $(libs-y) $(drivers-y) $(net-y) ../../../../../../kernel/mediatek/custom/out/kernel/touchpanel/ft_gesture_lib.a
-else
-vmlinux-main := $(core-y) $(libs-y) $(drivers-y) $(net-y) 
-endif
+vmlinux-main := $(core-y) $(libs-y) $(drivers-y) $(net-y)
 vmlinux-all  := $(vmlinux-init) $(vmlinux-main)
 vmlinux-lds  := arch/$(SRCARCH)/kernel/vmlinux.lds
 export KBUILD_VMLINUX_OBJS := $(vmlinux-all)
