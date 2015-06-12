@@ -52,53 +52,22 @@ ro.camera.sound.forced=0
 ro.audio.silent=0
 
 ro.zygote.preload.enable=0
-persist.sys.timezone=Asia/Calcutta
+ro.product.model.platform=1
+ro.product.model.cableupdatetoolsw=SW10
+
+#A: JWLJ-255 && JWLJ-257 daizhiyi {
+#delete bug_id:JWYY-180 zengchuiguo 20140512 (start)
+#ro.mtp.ptp.name = IQ4409
+#delete bug_id:JWYY-180 zengchuiguo 20140512 (end)
+#A: }
+
 #
-# ADDITIONAL_BUILD_PROPERTIES
+# switch bluetooth stack solution
 #
-ro.config.notification_sound=Alya.ogg
-ro.config.ringtone=Hive_Mind.mp3
-persist.gemini.sim_num=2
-sys.intelligent.holster.closed=0
-ro.gemini.smart_sim_switch=false
-ro.gemini.smart_3g_switch=1
-ril.specific.sm_cause=0
-bgw.current3gband=0
-ril.external.md=0
 ro.btstack=blueangel
-ro.sf.hwrotation=0
-ril.current.share_modem=2
-launcherplus.allappsgrid=2d
-curlockscreen=1
-ro.mediatek.gemini_support=true
-persist.radio.fd.counter=15
-persist.radio.fd.off.counter=5
-persist.radio.fd.r8.counter=15
-persist.radio.fd.off.r8.counter=5
-drm.service.enabled=true
-fmradio.driver.enable=1
-ril.first.md=1
-ril.flightmode.poweroffMD=1
-ril.telephony.mode=0
-dalvik.vm.mtk-stack-trace-file=/data/anr/mtk_traces.txt
-persist.mtk.anr.mechanism=1
-mediatek.wlan.chip=MTK_CONNSYS_MT6592
-mediatek.wlan.module.postfix=_mtk_connsys_mt6592
-ril.radiooff.poweroffMD=0
-ro.config.alarm_alert=Alarm_Classic.ogg
-persist.mtk.wcn.combo.chipid=-1
-ro.fota.oem=MTK_KK
-ro.fota.platform=MTK_KK
-ro.fota.type=phone
-ter.service.enable=0
-mediatek.extmd.usbport=0
-persist.sys.display.clearMotion=1
-persist.clearMotion.fblevel.nrm=255
-persist.clearMotion.fblevel.bdr=255
-ro.lte.dc.support=0
-ril.active.md=0
-ro.setupwizard.mode=OPTIONAL
-ro.com.google.gmsversion=4.4_r3
-persist.sys.dalvik.vm.lib=libdvm.so
-net.bt.name=Android
-dalvik.vm.stack-trace-file=/data/anr/traces.txt
+
+#add JWLW-1141 zhangzixiao 20140402
+ro.sms.dual.ringtones.support=yes
+persist.sys.timezone=Europe/Moscow
+
+com.anywayanyday.preinstall=true

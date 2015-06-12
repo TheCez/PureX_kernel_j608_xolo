@@ -29,7 +29,7 @@ BUILD_PRELOADER=yes
 BUILD_UBOOT=no
 
 # User can input ASCII string which is showed in About phone and bootimg header.
-CUSTOM_BUILD_VERNO=XOLO_8x-1000_S053_12032015
+#CUSTOM_BUILD_VERNO=
 
 # it is used to decide MT6620 combo chip BT and WiFi antenna architecture.  The meaning of each value is defined as follows. Please note that "CUSTOM_HAL_ANT" setting must be consistent with customer's MT6620 antenna architecture layout. Improper setting may lead to BT/WiFi malfunctions
 CUSTOM_HAL_ANT=mt6582_ant_m1
