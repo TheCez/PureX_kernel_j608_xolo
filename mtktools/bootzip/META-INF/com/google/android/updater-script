@@ -1,0 +1,15 @@
+ui_print("============================================");
+ui_print("|  Custom kernel 3.4.67 XOLO 8X-1000 HIVE  |");
+ui_print("|            Compiled by bgos10            |");
+ui_print("============================================");
+
+show_progress(0.7, 30);
+ui_print("| Writing new boot image ...               |");
+assert(package_extract_file("boot.img", "/tmp/boot.img"),
+       write_raw_image("/tmp/boot.img", "bootimg"),
+       delete("/tmp/boot.img"));
+show_progress(1, 0);
+
+ui_print("============================================");
+ui_print("|          Installed Successfully          |");
+ui_print("============================================");
