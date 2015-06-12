@@ -9,5 +9,10 @@ kernel/mediatek/custom/out
 auto_sync_android.log
 mediatek/external/vtmal/custom/common
 mediatek/preloader/preloader_j505_82.bin
+mediatek/build/tools/zImage
+mtktools/boot.img-kernel.img
+mtktools/bootzip/boot.img
+mtktools/bootzip/out.zip
+kernel.zip
 
 
