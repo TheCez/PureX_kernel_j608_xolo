@@ -64,9 +64,6 @@ config IOSCHED_ROW
 		according to queue priority.
 		Most suitable for mobile devices.
 
-<<<<<<< HEAD
-
-=======
 config IOSCHED_BFQ
 	tristate "BFQ I/O scheduler"
 	depends on EXPERIMENTAL
@@ -96,8 +93,8 @@ config IOSCHED_FIOPS
 	  This is an IOPS based I/O scheduler. It will try to distribute
           IOPS equally among all processes in the system. It's mainly for
           Flash based storage.		
-	  		
->>>>>>> 379f3cd... Add more I/O Schedulers
+
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -144,13 +141,9 @@ config DEFAULT_IOSCHED
 	default "cfq" if DEFAULT_CFQ
 	default "noop" if DEFAULT_NOOP
 	default "row" if DEFAULT_ROW
-<<<<<<< HEAD
-
-=======
 	default "fiops" if DEFAULT_FIOPS
 	default "bfq" if DEFAULT_BFQ
 	default "sio" if DEFAULT_SIO
->>>>>>> 379f3cd... Add more I/O Schedulers
 endmenu
 
 endif

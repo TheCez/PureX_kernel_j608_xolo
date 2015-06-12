@@ -12,7 +12,6 @@
  * Licensed under the GPL-2 as detailed in the accompanying COPYING.BFQ
  * file.
  */
-
 #ifdef CONFIG_CGROUP_BFQIO
 static struct bfqio_cgroup bfqio_root_cgroup = {
 	.weight = BFQ_DEFAULT_GRP_WEIGHT,
