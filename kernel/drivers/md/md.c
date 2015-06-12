@@ -7071,10 +7071,8 @@ void md_do_sync(struct mddev *mddev)
 	/* just incase thread restarts... */
 	if (test_bit(MD_RECOVERY_DONE, &mddev->recovery))
 		return;
-	if (mddev->ro) {/* never try to sync a read-only array */
-		set_bit(MD_RECOVERY_INTR, &mddev->recovery);
+	if (mddev->ro) /* never try to sync a read-only array */
 		return;
-	}
 
 	if (test_bit(MD_RECOVERY_SYNC, &mddev->recovery)) {
 		if (test_bit(MD_RECOVERY_CHECK, &mddev->recovery))
@@ -8182,8 +8180,7 @@ static int md_notify_reboot(struct notifier_block *this,
 		if (mddev_trylock(mddev)) {
 			if (mddev->pers)
 				__md_stop_writes(mddev);
-			if (mddev->persistent)
-				mddev->safemode = 2;
+			mddev->safemode = 2;
 			mddev_unlock(mddev);
 		}
 		need_delay = 1;
