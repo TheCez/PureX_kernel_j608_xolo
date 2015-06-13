@@ -251,19 +251,16 @@ int ping_init_sock(struct sock *sk)
 	struct group_info *group_info;
 	int i, j, count;
 	int ret = 0;
-<<<<<<< HEAD
 	
 	inet_get_ping_group_range_net(net, range, range+1);
 	if (range[0] <= group && group <= range[1])
 		return 0;
 		
-=======
 
 	inet_get_ping_group_range_net(net, range, range+1);
 	if (range[0] <= group && group <= range[1])
 		return 0;
 
->>>>>>> 61c94ee... upstream merge to Linux 3.4.94
 	group_info = get_current_groups();
 	count = group_info->ngroups;
 	for (i = 0; i < group_info->nblocks; i++) {
